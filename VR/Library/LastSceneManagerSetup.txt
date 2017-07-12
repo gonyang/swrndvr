@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SteamVR/Scenes/example.unity
+- path: Assets/GraniteTopGames/DemoScenes/RockAndRollGearPack1_Basic_AllPrefabs.unity
   isLoaded: 1
   isActive: 1
