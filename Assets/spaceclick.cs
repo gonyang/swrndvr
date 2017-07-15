@@ -6,10 +6,21 @@ public class spaceclick : MonoBehaviour {
 
     // Use this for initialization
     public GameObject fire;
+
+    public AudioClip drumaudio;
+    public AudioClip djaudio;
+    public AudioClip mikeaudio;
     float time = 0;
     int stage = 1;
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+
+    private void Start()
+    {
+        GetComponent<AudioSource>().clip = drumaudio;
+        GetComponent<AudioSource>().Play();
+    }
+
+    void Update () {
         
         if(time>0)
         {
@@ -34,7 +45,10 @@ public class spaceclick : MonoBehaviour {
             Quaternion tmpq = new Quaternion();
             tmpq.eulerAngles = new Vector3(0, 180, 0);
             transform.localRotation = tmpq;
-
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = djaudio;
+            GetComponent<AudioSource>().Play();
+            
         }
         else if (stage == 2 && Input.GetKeyDown(KeyCode.Space))
         {
@@ -43,6 +57,9 @@ public class spaceclick : MonoBehaviour {
             Quaternion tmpq = new Quaternion();
             tmpq.eulerAngles = new Vector3(0, 30, 0);
             transform.localRotation = tmpq;
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = mikeaudio;
+            GetComponent<AudioSource>().Play();
         }
         else if (stage == 3 && Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +68,9 @@ public class spaceclick : MonoBehaviour {
             Quaternion tmpq = new Quaternion();
             tmpq.eulerAngles = new Vector3(0, 120, 0);
             transform.localRotation = tmpq;
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = drumaudio;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
