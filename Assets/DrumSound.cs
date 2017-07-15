@@ -8,6 +8,7 @@ public class DrumSound : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         {
             this.gameObject.GetComponent<AudioSource>().Play();
+            Debug.Log("drum");
         }
     }
 }
